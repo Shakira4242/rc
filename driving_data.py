@@ -15,7 +15,7 @@ with open("driving_dataset/data.txt") as f:
         #the paper by Nvidia uses the inverse of the turning radius,
         #but steering wheel angle is proportional to the inverse of turning radius
         #so the steering wheel angle in radians is used as the output
-        ys.append(float(line.split()[1]) * scipy.pi / 180)
+        ys.append(float(line.split()[1])*1.0)
 
 #get number of images
 num_images = len(xs)
