@@ -24,7 +24,7 @@ saver = tf.train.Saver()
 
 # op to write logs to Tensorboard
 logs_path = './logs'
-summary_writer = tf.train.SummaryWriter(logs_path, graph=tf.get_default_graph())
+# summary_writer = tf.train.SummaryWriter(logs_path, graph=tf.get_default_graph())
 
 epochs = 30
 batch_size = 100
@@ -41,7 +41,7 @@ for epoch in range(epochs):
 
     # write logs at every iteration
     summary = merged_summary_op.eval(feed_dict={model.x:xs, model.y_: ys, model.keep_prob: 1.0})
-    summary_writer.add_summary(summary, epoch * batch_size + i)
+    # summary_writer.add_summary(summary, epoch * batch_size + i)
 
     if i % batch_size == 0:
       if not os.path.exists(LOGDIR):
